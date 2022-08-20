@@ -35,11 +35,38 @@ namespace StockTrackingApp.Repositories
             }
         }
 
+        public virtual async Task<T> AddAsync(T entity)
+        {
+            try
+            {
+                var result = await _dbContext.AddAsync<T>(entity);
+                await _dbContext.SaveChangesAsync();
+
+                return result.Entity;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+
         public virtual List<T> List(Expression<Func<T, bool>> predicate)
         {
             try
             {
                 return _table.Where(predicate).ToList();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+        
+        public virtual async Task<List<T>> ListAsync(Expression<Func<T, bool>> predicate)
+        {
+            try
+            {
+                return await _table.Where(predicate).ToListAsync();
             }
             catch (Exception e)
             {
@@ -58,12 +85,36 @@ namespace StockTrackingApp.Repositories
                 throw new Exception(e.Message, e.InnerException);
             }
         }
+        
+        public virtual async Task<List<T>> ListAsync()
+        {
+            try
+            {
+                return await _table.ToListAsync();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
 
         public virtual T? Get(Expression<Func<T, bool>> predicate)
         {
             try
             {
                 return _table.Where(predicate).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+        
+        public virtual Task<T?> GetAsync(Expression<Func<T, bool>> predicate)
+        {
+            try
+            {
+                return _table.Where(predicate).FirstOrDefaultAsync();
             }
             catch (Exception e)
             {
@@ -84,6 +135,20 @@ namespace StockTrackingApp.Repositories
                 throw new Exception(e.Message, e.InnerException);
             }
         }
+        
+        public virtual async Task<T> UpdateAsync(T entity)
+        {
+            try
+            {
+                var result = _dbContext.Update<T>(entity);
+                await _dbContext.SaveChangesAsync();
+                return result.Entity;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
 
         public virtual void Delete(T entity)
         {
@@ -91,6 +156,19 @@ namespace StockTrackingApp.Repositories
             {
                 _dbContext.Remove(entity);
                 _dbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+        
+        public virtual async Task DeleteAsync(T entity)
+        {
+            try
+            {
+                _dbContext.Remove(entity);
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception e)
             {
@@ -107,6 +185,22 @@ namespace StockTrackingApp.Repositories
                     throw new Exception("Entity can not be found");
                 _dbContext.Remove(entity);
                 _dbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+        
+        public virtual async Task DeleteAsync(object id)
+        {
+            try
+            {
+                var entity = await _table.FindAsync(id);
+                if (entity == null)
+                    throw new Exception("Entity can not be found");
+                _dbContext.Remove(entity);
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception e)
             {

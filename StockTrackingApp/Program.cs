@@ -26,7 +26,7 @@ namespace StockTrackingApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(ServiceProvider.GetRequiredService<Form1>());
+            Application.Run(ServiceProvider.GetRequiredService<formSales>());
         }
 
         static IHostBuilder CreateHostBuilder()
@@ -34,7 +34,9 @@ namespace StockTrackingApp
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) => {
                     services.AddSingleton(typeof(IStockTrackingRepository<>), typeof(StockTrackingRepository<>));
-                    services.AddScoped<Form1>();
+                    services.AddTransient<formSales>();
+                    services.AddTransient<frmAddCustomer>();
+                    services.AddTransient<FrmListCustomer>();
                 });
         }
     }

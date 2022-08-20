@@ -4,7 +4,6 @@ C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\StockTrackin
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\StockTrackingApp.dll
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\StockTrackingApp.pdb
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.csproj.AssemblyReference.cache
-C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Form1.resources
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.csproj.GenerateResource.cache
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.AssemblyInfoInputs.cache
@@ -74,3 +73,6 @@ C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Microsoft.Ex
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.EventSource.dll
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.formSales.resources
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.frmAddCustomer.resources
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.FrmListCustomer.resources

@@ -4,12 +4,18 @@ using StockTrackingApp.Repositories;
 
 namespace StockTrackingApp
 {
-    public partial class Form1 : Form
+    public partial class formSales : Form
     {
         private readonly IStockTrackingRepository<Customer> _customerRepository;
-        public Form1(IStockTrackingRepository<Customer> customerRepository)
+        private readonly frmAddCustomer _formAddCustomer;
+        private readonly FrmListCustomer _formListCustomer;
+        public formSales(IStockTrackingRepository<Customer> customerRepository,
+            frmAddCustomer formAddCustomer,
+            FrmListCustomer formListCustomer)
         {
             _customerRepository = customerRepository;
+            _formAddCustomer = formAddCustomer;
+            _formListCustomer = formListCustomer;
 
             InitializeComponent();
 
@@ -62,6 +68,20 @@ namespace StockTrackingApp
             {
                 throw new Exception(e.Message, e.InnerException);
             }
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            _formAddCustomer.ShowDialog();
+            if(_formAddCustomer.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Müþteri baþarýlý bir þekilde eklendi.", "Baþarýlý");
+            }
+        }
+
+        private void btnListCustomer_Click(object sender, EventArgs e)
+        {
+            _formListCustomer.ShowDialog();
         }
     }
 }
