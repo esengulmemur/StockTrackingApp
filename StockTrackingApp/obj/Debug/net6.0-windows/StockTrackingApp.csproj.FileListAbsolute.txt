@@ -78,3 +78,8 @@ C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\EntityFramew
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Core.pdb
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Customers.frmAddCustomer.resources
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Customers.FrmListCustomer.resources
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Categories.FormCategory.resources
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Products.FormAddProduct.resources
+C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Humanizer.dll
+C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Brands.FormBrand.resources

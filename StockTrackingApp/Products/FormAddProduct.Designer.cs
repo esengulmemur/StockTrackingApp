@@ -29,21 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNewBarcode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNewProductName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNewAmount = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNewPurchasePrice = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.cmbNewBrand = new System.Windows.Forms.ComboBox();
+            this.cmbNewCategory = new System.Windows.Forms.ComboBox();
             this.txtNewSalePrice = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbNewCategory = new System.Windows.Forms.ComboBox();
-            this.cmbNewBrand = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNewPurchasePrice = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNewAmount = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNewProductName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNewBarcode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grbExistingProduct = new System.Windows.Forms.GroupBox();
+            this.lblAmounts = new System.Windows.Forms.Label();
+            this.btnAddExisting = new System.Windows.Forms.Button();
             this.cmbExistingBrand = new System.Windows.Forms.ComboBox();
             this.cmbExistingCategory = new System.Windows.Forms.ComboBox();
             this.txtExistingSalePrice = new System.Windows.Forms.TextBox();
@@ -58,10 +61,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtExistingBarcode = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnAddNew = new System.Windows.Forms.Button();
-            this.btnAddExisting = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbExistingProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,87 +89,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Yeni Ürün";
             // 
-            // label1
+            // btnAddNew
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Barkod No";
+            this.btnAddNew.Location = new System.Drawing.Point(114, 235);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNew.TabIndex = 17;
+            this.btnAddNew.Text = "Ekle";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
-            // txtNewBarcode
+            // cmbNewBrand
             // 
-            this.txtNewBarcode.Location = new System.Drawing.Point(89, 32);
-            this.txtNewBarcode.Name = "txtNewBarcode";
-            this.txtNewBarcode.Size = new System.Drawing.Size(100, 23);
-            this.txtNewBarcode.TabIndex = 3;
+            this.cmbNewBrand.FormattingEnabled = true;
+            this.cmbNewBrand.Location = new System.Drawing.Point(89, 90);
+            this.cmbNewBrand.Name = "cmbNewBrand";
+            this.cmbNewBrand.Size = new System.Drawing.Size(100, 23);
+            this.cmbNewBrand.TabIndex = 16;
             // 
-            // label2
+            // cmbNewCategory
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Kategori";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Marka";
-            // 
-            // txtNewProductName
-            // 
-            this.txtNewProductName.Location = new System.Drawing.Point(89, 119);
-            this.txtNewProductName.Name = "txtNewProductName";
-            this.txtNewProductName.Size = new System.Drawing.Size(100, 23);
-            this.txtNewProductName.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Ürün Adı";
-            // 
-            // txtNewAmount
-            // 
-            this.txtNewAmount.Location = new System.Drawing.Point(89, 148);
-            this.txtNewAmount.Name = "txtNewAmount";
-            this.txtNewAmount.Size = new System.Drawing.Size(100, 23);
-            this.txtNewAmount.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 151);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Miktarı";
-            // 
-            // txtNewPurchasePrice
-            // 
-            this.txtNewPurchasePrice.Location = new System.Drawing.Point(89, 177);
-            this.txtNewPurchasePrice.Name = "txtNewPurchasePrice";
-            this.txtNewPurchasePrice.Size = new System.Drawing.Size(100, 23);
-            this.txtNewPurchasePrice.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Alış Fiyatı";
+            this.cmbNewCategory.FormattingEnabled = true;
+            this.cmbNewCategory.Location = new System.Drawing.Point(89, 61);
+            this.cmbNewCategory.Name = "cmbNewCategory";
+            this.cmbNewCategory.Size = new System.Drawing.Size(100, 23);
+            this.cmbNewCategory.TabIndex = 2;
             // 
             // txtNewSalePrice
             // 
@@ -186,45 +131,130 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Satış Fiyatı";
             // 
-            // cmbNewCategory
+            // txtNewPurchasePrice
             // 
-            this.cmbNewCategory.FormattingEnabled = true;
-            this.cmbNewCategory.Location = new System.Drawing.Point(89, 61);
-            this.cmbNewCategory.Name = "cmbNewCategory";
-            this.cmbNewCategory.Size = new System.Drawing.Size(100, 23);
-            this.cmbNewCategory.TabIndex = 2;
+            this.txtNewPurchasePrice.Location = new System.Drawing.Point(89, 177);
+            this.txtNewPurchasePrice.Name = "txtNewPurchasePrice";
+            this.txtNewPurchasePrice.Size = new System.Drawing.Size(100, 23);
+            this.txtNewPurchasePrice.TabIndex = 13;
             // 
-            // cmbNewBrand
+            // label6
             // 
-            this.cmbNewBrand.FormattingEnabled = true;
-            this.cmbNewBrand.Location = new System.Drawing.Point(89, 90);
-            this.cmbNewBrand.Name = "cmbNewBrand";
-            this.cmbNewBrand.Size = new System.Drawing.Size(100, 23);
-            this.cmbNewBrand.TabIndex = 16;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Alış Fiyatı";
             // 
-            // groupBox2
+            // txtNewAmount
             // 
-            this.groupBox2.Controls.Add(this.btnAddExisting);
-            this.groupBox2.Controls.Add(this.cmbExistingBrand);
-            this.groupBox2.Controls.Add(this.cmbExistingCategory);
-            this.groupBox2.Controls.Add(this.txtExistingSalePrice);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtExistingPurchasePrice);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtExistingAmount);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtExistingProductName);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.txtExistingBarcode);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Location = new System.Drawing.Point(306, 43);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 272);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Var Olan Ürün";
+            this.txtNewAmount.Location = new System.Drawing.Point(89, 148);
+            this.txtNewAmount.Name = "txtNewAmount";
+            this.txtNewAmount.Size = new System.Drawing.Size(100, 23);
+            this.txtNewAmount.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 151);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Miktarı";
+            // 
+            // txtNewProductName
+            // 
+            this.txtNewProductName.Location = new System.Drawing.Point(89, 119);
+            this.txtNewProductName.Name = "txtNewProductName";
+            this.txtNewProductName.Size = new System.Drawing.Size(100, 23);
+            this.txtNewProductName.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Ürün Adı";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Marka";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Kategori";
+            // 
+            // txtNewBarcode
+            // 
+            this.txtNewBarcode.Location = new System.Drawing.Point(89, 32);
+            this.txtNewBarcode.Name = "txtNewBarcode";
+            this.txtNewBarcode.Size = new System.Drawing.Size(100, 23);
+            this.txtNewBarcode.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Barkod No";
+            // 
+            // grbExistingProduct
+            // 
+            this.grbExistingProduct.Controls.Add(this.lblAmounts);
+            this.grbExistingProduct.Controls.Add(this.btnAddExisting);
+            this.grbExistingProduct.Controls.Add(this.cmbExistingBrand);
+            this.grbExistingProduct.Controls.Add(this.cmbExistingCategory);
+            this.grbExistingProduct.Controls.Add(this.txtExistingSalePrice);
+            this.grbExistingProduct.Controls.Add(this.label8);
+            this.grbExistingProduct.Controls.Add(this.txtExistingPurchasePrice);
+            this.grbExistingProduct.Controls.Add(this.label9);
+            this.grbExistingProduct.Controls.Add(this.txtExistingAmount);
+            this.grbExistingProduct.Controls.Add(this.label10);
+            this.grbExistingProduct.Controls.Add(this.txtExistingProductName);
+            this.grbExistingProduct.Controls.Add(this.label11);
+            this.grbExistingProduct.Controls.Add(this.label12);
+            this.grbExistingProduct.Controls.Add(this.label13);
+            this.grbExistingProduct.Controls.Add(this.txtExistingBarcode);
+            this.grbExistingProduct.Controls.Add(this.label14);
+            this.grbExistingProduct.Location = new System.Drawing.Point(306, 43);
+            this.grbExistingProduct.Name = "grbExistingProduct";
+            this.grbExistingProduct.Size = new System.Drawing.Size(230, 272);
+            this.grbExistingProduct.TabIndex = 17;
+            this.grbExistingProduct.TabStop = false;
+            this.grbExistingProduct.Text = "Var Olan Ürün";
+            // 
+            // lblAmounts
+            // 
+            this.lblAmounts.AutoSize = true;
+            this.lblAmounts.Location = new System.Drawing.Point(26, 243);
+            this.lblAmounts.Name = "lblAmounts";
+            this.lblAmounts.Size = new System.Drawing.Size(0, 15);
+            this.lblAmounts.TabIndex = 19;
+            // 
+            // btnAddExisting
+            // 
+            this.btnAddExisting.Location = new System.Drawing.Point(114, 235);
+            this.btnAddExisting.Name = "btnAddExisting";
+            this.btnAddExisting.Size = new System.Drawing.Size(75, 23);
+            this.btnAddExisting.TabIndex = 18;
+            this.btnAddExisting.Text = "Ekle";
+            this.btnAddExisting.UseVisualStyleBackColor = true;
+            this.btnAddExisting.Click += new System.EventHandler(this.btnAddExisting_Click);
             // 
             // cmbExistingBrand
             // 
@@ -330,6 +360,7 @@
             this.txtExistingBarcode.Name = "txtExistingBarcode";
             this.txtExistingBarcode.Size = new System.Drawing.Size(100, 23);
             this.txtExistingBarcode.TabIndex = 3;
+            this.txtExistingBarcode.TextChanged += new System.EventHandler(this.txtExistingBarcode_TextChanged);
             // 
             // label14
             // 
@@ -340,39 +371,22 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Barkod No";
             // 
-            // btnAddNew
-            // 
-            this.btnAddNew.Location = new System.Drawing.Point(114, 235);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(75, 23);
-            this.btnAddNew.TabIndex = 17;
-            this.btnAddNew.Text = "Ekle";
-            this.btnAddNew.UseVisualStyleBackColor = true;
-            // 
-            // btnAddExisting
-            // 
-            this.btnAddExisting.Location = new System.Drawing.Point(114, 235);
-            this.btnAddExisting.Name = "btnAddExisting";
-            this.btnAddExisting.Size = new System.Drawing.Size(75, 23);
-            this.btnAddExisting.TabIndex = 18;
-            this.btnAddExisting.Text = "Ekle";
-            this.btnAddExisting.UseVisualStyleBackColor = true;
-            // 
             // FormAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(573, 347);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grbExistingProduct);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Ekleme Sayfası";
+            this.Load += new System.EventHandler(this.FormAddProduct_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbExistingProduct.ResumeLayout(false);
+            this.grbExistingProduct.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -395,7 +409,7 @@
         private Label label2;
         private TextBox txtNewBarcode;
         private Label label1;
-        private GroupBox groupBox2;
+        private GroupBox grbExistingProduct;
         private Button btnAddExisting;
         private ComboBox cmbExistingBrand;
         private ComboBox cmbExistingCategory;
@@ -411,5 +425,6 @@
         private Label label13;
         private TextBox txtExistingBarcode;
         private Label label14;
+        private Label lblAmounts;
     }
 }

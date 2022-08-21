@@ -1,7 +1,10 @@
 using Core.Entities;
 using EntityFrameworkCore.EntityFrameworkCore.Repositories;
 using Microsoft.EntityFrameworkCore;
+using StockTrackingApp.Brands;
+using StockTrackingApp.Categories;
 using StockTrackingApp.Customers;
+using StockTrackingApp.Products;
 
 namespace StockTrackingApp
 {
@@ -10,17 +13,27 @@ namespace StockTrackingApp
         private readonly IStockTrackingRepository<Customer> _customerRepository;
         private readonly frmAddCustomer _formAddCustomer;
         private readonly FrmListCustomer _formListCustomer;
+        private readonly FormAddProduct _formAddProduct;
+        private readonly FormCategory _formCategory;
+        private readonly FormBrand _formBrand;
+
         public formSales(IStockTrackingRepository<Customer> customerRepository,
             frmAddCustomer formAddCustomer,
-            FrmListCustomer formListCustomer)
+            FrmListCustomer formListCustomer,
+            FormCategory formCategory,
+            FormBrand formBrand,
+            FormAddProduct formAddProduct)
         {
             _customerRepository = customerRepository;
             _formAddCustomer = formAddCustomer;
             _formListCustomer = formListCustomer;
+            _formAddProduct = formAddProduct;
+            _formCategory = formCategory;
+            _formBrand = formBrand;
 
             InitializeComponent();
 
-            GetCustomers();
+            //GetCustomers();
         }
 
         public void GetCustomers()
@@ -83,6 +96,21 @@ namespace StockTrackingApp
         private void btnListCustomer_Click(object sender, EventArgs e)
         {
             _formListCustomer.ShowDialog();
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            _formAddProduct.ShowDialog();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            _formCategory.ShowDialog();
+        }
+
+        private void btnBrand_Click(object sender, EventArgs e)
+        {
+            _formBrand.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace StockTrackingApp.Categories
+﻿namespace StockTrackingApp.Brands
 {
-    partial class FormCategory
+    partial class FormBrand
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtCategoryName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.txtBrand = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(107, 73);
+            this.btnAdd.Location = new System.Drawing.Point(103, 104);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -43,34 +43,34 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtCategoryName
+            // lblBrand
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(93, 44);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(100, 23);
-            this.txtCategoryName.TabIndex = 1;
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(32, 66);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(40, 15);
+            this.lblBrand.TabIndex = 1;
+            this.lblBrand.Text = "Marka";
             // 
-            // label1
+            // txtBrand
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Kategori";
+            this.txtBrand.Location = new System.Drawing.Point(78, 63);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(100, 23);
+            this.txtBrand.TabIndex = 2;
             // 
-            // FormCategory
+            // FormBrand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(244, 152);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCategoryName);
+            this.ClientSize = new System.Drawing.Size(212, 168);
+            this.Controls.Add(this.txtBrand);
+            this.Controls.Add(this.lblBrand);
             this.Controls.Add(this.btnAdd);
-            this.Name = "FormCategory";
+            this.Name = "FormBrand";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kategori Sayfası";
+            this.Text = "Marka Sayfası";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +79,7 @@
         #endregion
 
         private Button btnAdd;
-        private TextBox txtCategoryName;
-        private Label label1;
+        private Label lblBrand;
+        private TextBox txtBrand;
     }
 }

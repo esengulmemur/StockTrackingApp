@@ -2,6 +2,8 @@ using EntityFrameworkCore.EntityFrameworkCore.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StockTrackingApp.Brands;
+using StockTrackingApp.Categories;
 using StockTrackingApp.Customers;
 using StockTrackingApp.Products;
 
@@ -39,6 +41,8 @@ namespace StockTrackingApp
                     services.AddTransient<frmAddCustomer>();
                     services.AddTransient<FrmListCustomer>();
                     services.AddTransient<FormAddProduct>();
+                    services.AddTransient<FormCategory>();
+                    services.AddTransient<FormBrand>();
                 });
         }
     }

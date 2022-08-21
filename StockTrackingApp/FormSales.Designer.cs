@@ -54,6 +54,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.Total = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBrand = new System.Windows.Forms.Button();
+            this.btnCategory = new System.Windows.Forms.Button();
             this.btnListSales = new System.Windows.Forms.Button();
             this.btnListProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -292,6 +294,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBrand);
+            this.panel1.Controls.Add(this.btnCategory);
             this.panel1.Controls.Add(this.btnListSales);
             this.panel1.Controls.Add(this.btnListProduct);
             this.panel1.Controls.Add(this.btnAddProduct);
@@ -303,38 +307,59 @@
             this.panel1.Size = new System.Drawing.Size(860, 100);
             this.panel1.TabIndex = 8;
             // 
+            // btnBrand
+            // 
+            this.btnBrand.Location = new System.Drawing.Point(726, 25);
+            this.btnBrand.Name = "btnBrand";
+            this.btnBrand.Size = new System.Drawing.Size(111, 47);
+            this.btnBrand.TabIndex = 15;
+            this.btnBrand.Text = "Marka";
+            this.btnBrand.UseVisualStyleBackColor = true;
+            this.btnBrand.Click += new System.EventHandler(this.btnBrand_Click);
+            // 
+            // btnCategory
+            // 
+            this.btnCategory.Location = new System.Drawing.Point(609, 25);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(111, 47);
+            this.btnCategory.TabIndex = 14;
+            this.btnCategory.Text = "Kategori";
+            this.btnCategory.UseVisualStyleBackColor = true;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
+            // 
             // btnListSales
             // 
-            this.btnListSales.Location = new System.Drawing.Point(503, 21);
+            this.btnListSales.Location = new System.Drawing.Point(492, 25);
             this.btnListSales.Name = "btnListSales";
-            this.btnListSales.Size = new System.Drawing.Size(117, 47);
+            this.btnListSales.Size = new System.Drawing.Size(111, 47);
             this.btnListSales.TabIndex = 13;
             this.btnListSales.Text = "Satışları Listeleme";
             this.btnListSales.UseVisualStyleBackColor = true;
             // 
             // btnListProduct
             // 
-            this.btnListProduct.Location = new System.Drawing.Point(380, 21);
+            this.btnListProduct.Location = new System.Drawing.Point(375, 25);
             this.btnListProduct.Name = "btnListProduct";
-            this.btnListProduct.Size = new System.Drawing.Size(117, 47);
+            this.btnListProduct.Size = new System.Drawing.Size(111, 47);
             this.btnListProduct.TabIndex = 12;
             this.btnListProduct.Text = "Ürün Listeleme";
             this.btnListProduct.UseVisualStyleBackColor = true;
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(257, 21);
+            this.btnAddProduct.Location = new System.Drawing.Point(258, 25);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(117, 47);
+            this.btnAddProduct.Size = new System.Drawing.Size(111, 47);
             this.btnAddProduct.TabIndex = 11;
             this.btnAddProduct.Text = "Ürün Ekleme";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnListCustomer
             // 
-            this.btnListCustomer.Location = new System.Drawing.Point(134, 21);
+            this.btnListCustomer.Location = new System.Drawing.Point(141, 25);
             this.btnListCustomer.Name = "btnListCustomer";
-            this.btnListCustomer.Size = new System.Drawing.Size(117, 47);
+            this.btnListCustomer.Size = new System.Drawing.Size(111, 47);
             this.btnListCustomer.TabIndex = 10;
             this.btnListCustomer.Text = "Müşteri Listeleme";
             this.btnListCustomer.UseVisualStyleBackColor = true;
@@ -342,9 +367,9 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(11, 21);
+            this.btnAddCustomer.Location = new System.Drawing.Point(24, 25);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(117, 47);
+            this.btnAddCustomer.Size = new System.Drawing.Size(111, 47);
             this.btnAddCustomer.TabIndex = 9;
             this.btnAddCustomer.Text = "Müşteri Ekleme";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
@@ -413,5 +438,7 @@
         private Button btnAddProduct;
         private Button btnListCustomer;
         private Button btnAddCustomer;
+        private Button btnBrand;
+        private Button btnCategory;
     }
 }

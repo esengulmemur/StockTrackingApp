@@ -10,15 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StockTrackingApp.Categories
+namespace StockTrackingApp.Brands
 {
-    public partial class FormCategory : Form
+    public partial class FormBrand : Form
     {
-        private readonly IStockTrackingRepository<Category> _categoryRepository;
+        private readonly IStockTrackingRepository<Brand> _brandRepository;
 
-        public FormCategory(IStockTrackingRepository<Category> categoryRepository)
+        public FormBrand(IStockTrackingRepository<Brand> brandRepository)
         {
-            _categoryRepository = categoryRepository;
+            _brandRepository = brandRepository;
 
             InitializeComponent();
         }
@@ -27,15 +27,15 @@ namespace StockTrackingApp.Categories
         {
             try
             {
-                var category = new Category()
+                var brand = new Brand()
                 {
-                    Name = txtCategoryName.Text
+                    Name = txtBrand.Text
                 };
-                await _categoryRepository.AddAsync(category);
+                await _brandRepository.AddAsync(brand);
 
-                MessageBox.Show($"{txtCategoryName.Text} eklendi.", "Başarılı");
+                MessageBox.Show($"{txtBrand.Text} eklendi.", "Başarılı");
 
-                txtCategoryName.Text = "";
+                txtBrand.Text = "";
             }
             catch (Exception ex)
             {
