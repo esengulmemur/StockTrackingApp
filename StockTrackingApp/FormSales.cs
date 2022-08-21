@@ -1,6 +1,7 @@
+using Core.Entities;
+using EntityFrameworkCore.EntityFrameworkCore.Repositories;
 using Microsoft.EntityFrameworkCore;
-using StockTrackingApp.BL;
-using StockTrackingApp.Repositories;
+using StockTrackingApp.Customers;
 
 namespace StockTrackingApp
 {

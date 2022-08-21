@@ -1,0 +1,17 @@
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.csproj.AssemblyReference.cache
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.AssemblyInfoInputs.cache
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.AssemblyInfo.cs
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.csproj.CoreCompileInputs.cache
+C:\repos\StockTrackingApp\EntityFrameworkCore\bin\Debug\net6.0\EntityFrameworkCore.deps.json
+C:\repos\StockTrackingApp\EntityFrameworkCore\bin\Debug\net6.0\EntityFrameworkCore.runtimeconfig.json
+C:\repos\StockTrackingApp\EntityFrameworkCore\bin\Debug\net6.0\EntityFrameworkCore.dll
+C:\repos\StockTrackingApp\EntityFrameworkCore\bin\Debug\net6.0\EntityFrameworkCore.pdb
+C:\repos\StockTrackingApp\EntityFrameworkCore\bin\Debug\net6.0\Core.dll
+C:\repos\StockTrackingApp\EntityFrameworkCore\bin\Debug\net6.0\Core.pdb
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.csproj.CopyComplete
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.dll
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\refint\EntityFrameworkCore.dll
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.pdb
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\EntityFrameworkCore.genruntimeconfig.cache
+C:\repos\StockTrackingApp\EntityFrameworkCore\obj\Debug\net6.0\ref\EntityFrameworkCore.dll

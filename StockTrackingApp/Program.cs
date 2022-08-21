@@ -1,7 +1,9 @@
+using EntityFrameworkCore.EntityFrameworkCore.Repositories;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using StockTrackingApp.BL;
-using StockTrackingApp.Repositories;
+using StockTrackingApp.Customers;
+using StockTrackingApp.Products;
 
 namespace StockTrackingApp
 {
@@ -22,7 +24,6 @@ namespace StockTrackingApp
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
@@ -37,6 +38,7 @@ namespace StockTrackingApp
                     services.AddTransient<formSales>();
                     services.AddTransient<frmAddCustomer>();
                     services.AddTransient<FrmListCustomer>();
+                    services.AddTransient<FormAddProduct>();
                 });
         }
     }
