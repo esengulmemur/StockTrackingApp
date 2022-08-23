@@ -8,11 +8,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockTrackingApp", "StockTr
 		{F7A9E7CD-2426-4DBE-9FC2-3983B4CE1726} = {F7A9E7CD-2426-4DBE-9FC2-3983B4CE1726}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\Core\Core.csproj", "{13D5891C-B17D-40B7-BEFC-50074FAD5290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "..\Core\Core.csproj", "{13D5891C-B17D-40B7-BEFC-50074FAD5290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCore", "..\EntityFrameworkCore\EntityFrameworkCore.csproj", "{F7A9E7CD-2426-4DBE-9FC2-3983B4CE1726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore", "..\EntityFrameworkCore\EntityFrameworkCore.csproj", "{F7A9E7CD-2426-4DBE-9FC2-3983B4CE1726}"
 	ProjectSection(ProjectDependencies) = postProject
 		{13D5891C-B17D-40B7-BEFC-50074FAD5290} = {13D5891C-B17D-40B7-BEFC-50074FAD5290}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FC571A4-2739-4CEB-960B-68A6F68B6132}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Global

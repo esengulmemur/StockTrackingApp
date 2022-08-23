@@ -52,7 +52,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSalesCancel = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.Total = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBrand = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
@@ -260,6 +260,7 @@
             this.btnMakeSale.TabIndex = 4;
             this.btnMakeSale.Text = "Satış Yap";
             this.btnMakeSale.UseVisualStyleBackColor = true;
+            this.btnMakeSale.Click += new System.EventHandler(this.btnMakeSale_Click);
             // 
             // btnDelete
             // 
@@ -290,13 +291,13 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Genel Toplam";
             // 
-            // Total
+            // lblTotal
             // 
-            this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(550, 441);
-            this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(0, 15);
-            this.Total.TabIndex = 7;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(550, 441);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 15);
+            this.lblTotal.TabIndex = 7;
             // 
             // panel1
             // 
@@ -341,6 +342,7 @@
             this.btnListSales.TabIndex = 13;
             this.btnListSales.Text = "Satışları Listeleme";
             this.btnListSales.UseVisualStyleBackColor = true;
+            this.btnListSales.Click += new System.EventHandler(this.btnListSales_Click);
             // 
             // btnListProduct
             // 
@@ -389,7 +391,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(860, 492);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Total);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSalesCancel);
             this.Controls.Add(this.btnDelete);
@@ -439,7 +441,7 @@
         private Button btnDelete;
         private Button btnSalesCancel;
         private Label label9;
-        private Label Total;
+        private Label lblTotal;
         private Panel panel1;
         private Button btnListSales;
         private Button btnListProduct;

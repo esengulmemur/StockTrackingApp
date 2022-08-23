@@ -13,26 +13,32 @@ namespace StockTrackingApp
         private readonly IStockTrackingRepository<Customer> _customerRepository;
         private readonly IStockTrackingRepository<Basket> _basketRepository;
         private readonly IStockTrackingRepository<Product> _productRepository;
+        private readonly IStockTrackingRepository<Sales> _salesRepository;
         private readonly frmAddCustomer _formAddCustomer;
         private readonly FrmListCustomer _formListCustomer;
         private readonly FormAddProduct _formAddProduct;
         private readonly FormListProduct _formListProduct;
         private readonly FormCategory _formCategory;
         private readonly FormBrand _formBrand;
+        private readonly FormListSale _formListSale;
 
         private string TC = "";
         private string barcode = "";
         private int amount = 0;
 
+        private List<Basket> baskets;
+
         public formSales(IStockTrackingRepository<Customer> customerRepository,
             IStockTrackingRepository<Basket> basketRepository,
             IStockTrackingRepository<Product> productRepository,
+            IStockTrackingRepository<Sales> salesRepository,
             frmAddCustomer formAddCustomer,
             FrmListCustomer formListCustomer,
             FormCategory formCategory,
             FormBrand formBrand,
             FormAddProduct formAddProduct,
-            FormListProduct formListProduct)
+            FormListProduct formListProduct,
+            FormListSale formListSale)
         {
             _customerRepository = customerRepository;
             _formAddCustomer = formAddCustomer;
@@ -43,6 +49,8 @@ namespace StockTrackingApp
             _formListProduct = formListProduct;
             _basketRepository = basketRepository;
             _productRepository = productRepository;
+            _formListSale = formListSale;
+            _salesRepository = salesRepository;
 
             InitializeComponent();
 
@@ -147,8 +155,11 @@ namespace StockTrackingApp
             //if(!string.IsNullOrEmpty(txtPhoneNumber.Text))
             //    query = query.Where(x => x.PhoneNumber.Contains(txtPhoneNumber.Text));
 
-            dgvBaskets.DataSource = await query.ToListAsync();
+            baskets = await query.ToListAsync();
 
+            lblTotal.Text = baskets.Sum(x => x.TotalPrice).ToString() + " TL";
+
+            dgvBaskets.DataSource = baskets;
             dgvBaskets.Columns[0].HeaderText = "TC";
             dgvBaskets.Columns[1].HeaderText = "Ad Soyad";
             dgvBaskets.Columns[2].HeaderText = "Tel No";
@@ -305,11 +316,15 @@ namespace StockTrackingApp
         {
             try
             {
-                await _basketRepository.DeleteAsync(dgvBaskets.CurrentRow.Cells["Id"].Value);
+                var result = MessageBox.Show("Seçili ürün kaldýrýlacaktýr.", "Emin Misiniz?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    await _basketRepository.DeleteAsync(dgvBaskets.CurrentRow.Cells["Id"].Value);
 
-                MessageBox.Show("Ürün sepetten kaldýrýldý.", "Baþarýlý");
+                    MessageBox.Show("Ürün sepetten kaldýrýldý.", "Baþarýlý");
 
-                await GetBasketsAsync();
+                    await GetBasketsAsync();
+                }
             }
             catch (Exception ex)
             {
@@ -321,17 +336,86 @@ namespace StockTrackingApp
         {
             try
             {
-                var baskets = await _basketRepository.ListAsync();
+                var result = MessageBox.Show("Sepetteki ürünler kaldýrýlacaktýr.", "Emin Misiniz?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    await _basketRepository.DeleteRangeAsync(baskets);
 
-                await _basketRepository.DeleteRangeAsync(baskets);
+                    MessageBox.Show("Ürünler sepetten kaldýrýldý.", "Baþarýlý");
 
-                MessageBox.Show("Ürünler sepetten kaldýrýldý.", "Baþarýlý");
-
-                await GetBasketsAsync();
+                    await GetBasketsAsync();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Hata");
+            }
+        }
+
+        private void btnListSales_Click(object sender, EventArgs e)
+        {
+            _formListSale.ShowDialog();
+        }
+
+        private async void btnMakeSale_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = MessageBox.Show("Sepetteki ürünler sipariþe dönüþecektir.", "Emin Misiniz?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    var sales = baskets.Select(x => new Sales()
+                    {
+                        Amount = x.Amount,
+                        BarkodeNo = x.BarkodeNo,
+                        Date = DateTime.Now,
+                        FullName = x.FullName,
+                        PhoneNumber = x.PhoneNumber,
+                        ProductName = x.ProductName,
+                        SalePrice = x.SalePrice,
+                        TC = x.TC,
+                        TotalPrice = x.TotalPrice
+                    });
+
+                    await UpdateAmountOfProductAsync();
+
+                    await _salesRepository.AddRangeAsync(sales);
+
+                    await _basketRepository.DeleteRangeAsync(baskets);
+
+                    MessageBox.Show("Sipariþ gerçekleþti.", "Baþarýlý");
+
+                    await GetBasketsAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata");
+            }
+        }
+
+        private async Task UpdateAmountOfProductAsync()
+        {
+            try
+            {
+                var products = await _productRepository
+                        .ListAsync(x => baskets.Select(y => y.BarkodeNo).Contains(x.Barcode));
+                Basket basket;
+
+                foreach (var product in products)
+                {
+                    basket = baskets.FirstOrDefault(x => x.BarkodeNo == product.Barcode);
+                    product.Amount -= basket.Amount;
+
+                    if (product.Amount < 0)
+                        throw new Exception("Yetersizs stok");
+                }
+
+                await _productRepository.UpdateRangeAsync(products);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
             }
         }
     }

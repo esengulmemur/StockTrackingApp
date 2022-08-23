@@ -45,6 +45,19 @@ namespace EntityFrameworkCore.EntityFrameworkCore.Repositories
             }
         }
 
+        public virtual async Task AddRangeAsync(IEnumerable<T> entity)
+        {
+            try
+            {
+                await _dbContext.AddRangeAsync(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+
         public virtual List<T> List(Expression<Func<T, bool>> predicate)
         {
             try
@@ -124,6 +137,19 @@ namespace EntityFrameworkCore.EntityFrameworkCore.Repositories
                 var result = _dbContext.Update<T>(entity);
                 _dbContext.SaveChanges();
                 return result.Entity;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+
+        public virtual async Task UpdateRangeAsync(IEnumerable<T> entity)
+        {
+            try
+            {
+                _dbContext.UpdateRange(entity);
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception e)
             {

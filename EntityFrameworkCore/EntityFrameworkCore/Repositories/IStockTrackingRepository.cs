@@ -7,6 +7,7 @@ namespace EntityFrameworkCore.EntityFrameworkCore.Repositories
     {
         T Add(T entity);
         Task<T> AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entity);
         List<T> List(Expression<Func<T, bool>> predicate);
         Task<List<T>> ListAsync(Expression<Func<T, bool>> predicate);
         List<T> List();
@@ -15,6 +16,7 @@ namespace EntityFrameworkCore.EntityFrameworkCore.Repositories
         Task<T?> GetAsync(Expression<Func<T, bool>> predicate);
         T Update(T entity);
         Task<T> UpdateAsync(T entity);
+        Task UpdateRangeAsync(IEnumerable<T> entity);
         void Delete(T entity);
         Task DeleteAsync(T entity);
         void Delete(object id);

@@ -84,3 +84,4 @@ C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Humanizer.dl
 C:\repos\StockTrackingApp\StockTrackingApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Brands.FormBrand.resources
 C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.Products.FormListProduct.resources
+C:\repos\StockTrackingApp\StockTrackingApp\obj\Debug\net6.0-windows\StockTrackingApp.FormListSale.resources
