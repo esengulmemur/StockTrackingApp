@@ -43,5 +43,10 @@ namespace StockTrackingApp.Brands
                 throw new Exception(ex.Message, ex.InnerException);
             }
         }
+
+        private void FormBrand_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

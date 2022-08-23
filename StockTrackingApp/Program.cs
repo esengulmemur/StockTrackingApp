@@ -43,6 +43,7 @@ namespace StockTrackingApp
                     services.AddTransient<FormAddProduct>();
                     services.AddTransient<FormCategory>();
                     services.AddTransient<FormBrand>();
+                    services.AddTransient<FormListProduct>();
                 });
         }
     }

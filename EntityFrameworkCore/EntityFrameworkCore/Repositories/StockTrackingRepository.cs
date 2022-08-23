@@ -203,11 +203,36 @@ namespace EntityFrameworkCore.EntityFrameworkCore.Repositories
             }
         }
 
+        public virtual async Task DeleteRangeAsync(IEnumerable<T> entities)
+        {
+            try
+            { 
+                _dbContext.RemoveRange(entities);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+
         public virtual IQueryable<T> Query(Expression<Func<T, bool>> predicate)
         {
             try
             {
                 return _table.Where(predicate);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+        }
+
+        public virtual IQueryable<T> Query()
+        {
+            try
+            {
+                return _table;
             }
             catch (Exception e)
             {

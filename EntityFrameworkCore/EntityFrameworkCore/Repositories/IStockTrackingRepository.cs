@@ -19,6 +19,8 @@ namespace EntityFrameworkCore.EntityFrameworkCore.Repositories
         Task DeleteAsync(T entity);
         void Delete(object id);
         Task DeleteAsync(object id);
+        Task DeleteRangeAsync(IEnumerable<T> entities);
         IQueryable<T> Query(Expression<Func<T, bool>> predicate);
+        IQueryable<T> Query();
     }
 }

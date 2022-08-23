@@ -71,6 +71,7 @@
             this.Name = "FormCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kategori Sayfası";
+            this.Load += new System.EventHandler(this.FormCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

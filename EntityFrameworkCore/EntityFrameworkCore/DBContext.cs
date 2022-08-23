@@ -10,6 +10,8 @@ namespace EntityFrameworkCore.EntityFrameworkCore
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<Sales> Sales { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

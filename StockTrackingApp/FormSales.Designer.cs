@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBaskets = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -36,7 +36,7 @@
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTC = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbProductOperations = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,21 +61,21 @@
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnListCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaskets)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbProductOperations.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvBaskets
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(223, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(517, 287);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBaskets.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBaskets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBaskets.Location = new System.Drawing.Point(223, 125);
+            this.dgvBaskets.Name = "dgvBaskets";
+            this.dgvBaskets.RowTemplate.Height = 25;
+            this.dgvBaskets.Size = new System.Drawing.Size(517, 287);
+            this.dgvBaskets.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -139,25 +139,26 @@
             this.txtTC.Name = "txtTC";
             this.txtTC.Size = new System.Drawing.Size(119, 23);
             this.txtTC.TabIndex = 0;
+            this.txtTC.TextChanged += new System.EventHandler(this.txtTC_TextChanged);
             // 
-            // groupBox2
+            // grbProductOperations
             // 
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtTotalPrice);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtPrice);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtAmount);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtProductName);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtBarcode);
-            this.groupBox2.Location = new System.Drawing.Point(4, 280);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 176);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ürün İşlemleri";
+            this.grbProductOperations.Controls.Add(this.label8);
+            this.grbProductOperations.Controls.Add(this.txtTotalPrice);
+            this.grbProductOperations.Controls.Add(this.label7);
+            this.grbProductOperations.Controls.Add(this.txtPrice);
+            this.grbProductOperations.Controls.Add(this.label6);
+            this.grbProductOperations.Controls.Add(this.txtAmount);
+            this.grbProductOperations.Controls.Add(this.label5);
+            this.grbProductOperations.Controls.Add(this.txtProductName);
+            this.grbProductOperations.Controls.Add(this.label4);
+            this.grbProductOperations.Controls.Add(this.txtBarcode);
+            this.grbProductOperations.Location = new System.Drawing.Point(4, 280);
+            this.grbProductOperations.Name = "grbProductOperations";
+            this.grbProductOperations.Size = new System.Drawing.Size(213, 176);
+            this.grbProductOperations.TabIndex = 2;
+            this.grbProductOperations.TabStop = false;
+            this.grbProductOperations.Text = "Ürün İşlemleri";
             // 
             // label8
             // 
@@ -206,6 +207,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(119, 23);
             this.txtAmount.TabIndex = 10;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // label5
             // 
@@ -238,6 +240,7 @@
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(119, 23);
             this.txtBarcode.TabIndex = 6;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // btnAdd
             // 
@@ -247,6 +250,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnMakeSale
             // 
@@ -265,6 +269,7 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSalesCancel
             // 
@@ -274,6 +279,7 @@
             this.btnSalesCancel.TabIndex = 6;
             this.btnSalesCancel.Text = "Satış İptal";
             this.btnSalesCancel.UseVisualStyleBackColor = true;
+            this.btnSalesCancel.Click += new System.EventHandler(this.btnSalesCancel_Click);
             // 
             // label9
             // 
@@ -344,6 +350,7 @@
             this.btnListProduct.TabIndex = 12;
             this.btnListProduct.Text = "Ürün Listeleme";
             this.btnListProduct.UseVisualStyleBackColor = true;
+            this.btnListProduct.Click += new System.EventHandler(this.btnListProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -388,17 +395,18 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnMakeSale);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grbProductOperations);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvBaskets);
             this.Name = "formSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satış Sayfası";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.formSales_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaskets)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbProductOperations.ResumeLayout(false);
+            this.grbProductOperations.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -407,7 +415,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvBaskets;
         private GroupBox groupBox1;
         private Label label3;
         private TextBox txtPhoneNumber;
@@ -415,7 +423,7 @@
         private TextBox txtFullName;
         private Label label1;
         private TextBox txtTC;
-        private GroupBox groupBox2;
+        private GroupBox grbProductOperations;
         private Label label8;
         private TextBox txtTotalPrice;
         private Label label7;

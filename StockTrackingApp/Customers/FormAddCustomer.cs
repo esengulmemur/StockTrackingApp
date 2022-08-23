@@ -46,5 +46,10 @@ namespace StockTrackingApp.Customers
                 throw new Exception(ex.Message, ex.InnerException);
             }
         }
+
+        private void frmAddCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

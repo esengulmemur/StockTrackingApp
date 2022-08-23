@@ -71,6 +71,7 @@
             this.Name = "FormBrand";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marka Sayfası";
+            this.Load += new System.EventHandler(this.FormBrand_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -43,5 +43,10 @@ namespace StockTrackingApp.Categories
                 throw new Exception(ex.Message, ex.InnerException);
             }
         }
+
+        private void FormCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
